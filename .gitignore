@@ -8,3 +8,7 @@ __pycache__/
 # Ignore data files
 qdrant_data/
 neo4j_data/
+
+# Ignore cloned repositories
+graphiti/
+mcp-server-qdrant/

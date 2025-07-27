@@ -1,0 +1,8 @@
+
+PyMuPDF
+requests
+qdrant-client
+neo4j
+sentence-transformers
+numpy<2.0
+openai

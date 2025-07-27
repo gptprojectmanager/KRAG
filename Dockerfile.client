@@ -1,0 +1,12 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Installiamo le dipendenze di sistema per PyMuPDF
+RUN apt-get update && apt-get install -y --no-install-recommends     libmupdf-dev     mupdf-tools     curl     && rm -rf /var/lib/apt/lists/*
+
+# Copiamo i requisiti e installiamo le librerie Python
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
