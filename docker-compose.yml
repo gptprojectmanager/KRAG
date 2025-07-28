@@ -45,10 +45,11 @@ services:
     build: ./mcp-server-qdrant
     container_name: krag-qdrant-mcp
     ports:
-      - "8001:8000"  # MCP SSE transport port
+      - "8001:8001"  # MCP SSE transport port (host:container)
     environment:
       - QDRANT_URL=http://qdrant-db:6333  # Connect to local Qdrant instance
       - FASTMCP_HOST=0.0.0.0  # Bind to all interfaces for external access
+      - FASTMCP_PORT=8001  # Use port 8001 inside container for clarity
     depends_on:
       - qdrant-db
 
